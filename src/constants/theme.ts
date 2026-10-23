@@ -1,6 +1,6 @@
 /**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://unistyl.es/), etc.
+ * Color and styling constants for ImagineStyle
+ * Palette: Electric Indigo & Cobalt
  */
 
 import '@/global.css';
@@ -9,18 +9,42 @@ import { Platform } from 'react-native';
 
 export const Colors = {
   light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
+    text: '#1C1917',
+    textSecondary: '#78716C',
+    background: '#F8F7F4',
+    backgroundElement: '#EFECE6',
+    backgroundSelected: '#E5E1D8',
+    card: '#FFFFFF',
+    cardBorder: '#E8E4DC',
+    primary: '#0066FF',
+    primaryHover: '#0052CC',
+    primaryGradientStart: '#0066FF',
+    primaryGradientEnd: '#0052CC',
+    accent: '#0066FF',
+    badge: '#EF4444',
+    tint: '#1C1917',
+    tabIconDefault: '#A8A29E',
+    tabIconSelected: '#1C1917',
+    border: '#E8E4DC',
   },
   dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
+    text: '#EBE8E1',
+    textSecondary: '#96948E',
+    background: '#121214',
+    backgroundElement: '#232328',
+    backgroundSelected: '#2C2C33',
+    card: '#1A1A1E',
+    cardBorder: '#292930',
+    primary: '#0066FF',
+    primaryHover: '#0052CC',
+    primaryGradientStart: '#0066FF',
+    primaryGradientEnd: '#0052CC',
+    accent: '#0066FF',
+    badge: '#EF4444',
+    tint: '#EBE8E1',
+    tabIconDefault: '#63615C',
+    tabIconSelected: '#EBE8E1',
+    border: '#24242A',
   },
 } as const;
 
@@ -28,13 +52,9 @@ export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
 
 export const Fonts = Platform.select({
   ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
     sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
     serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
     rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
     mono: 'ui-monospace',
   },
   default: {
@@ -44,10 +64,10 @@ export const Fonts = Platform.select({
     mono: 'monospace',
   },
   web: {
-    sans: 'var(--font-display)',
-    serif: 'var(--font-serif)',
-    rounded: 'var(--font-rounded)',
-    mono: 'var(--font-mono)',
+    sans: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+    serif: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+    rounded: 'ui-rounded, "SF Pro Rounded", system-ui, sans-serif',
+    mono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
   },
 });
 
@@ -61,5 +81,5 @@ export const Spacing = {
   six: 64,
 } as const;
 
-export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
-export const MaxContentWidth = 800;
+export const BottomTabInset = Platform.select({ ios: 88, android: 72 }) ?? 68;
+export const MaxContentWidth = 1120;
